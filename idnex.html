@@ -7,12 +7,23 @@
 </head>
 <body>
     <header>
-        <p class="BigText">하</p><p class="SmallText">루</p><p class="BigText">오</p><p class="SmallText">분</p><p class="SmallText">요</p><p class="BigText">리</p>
-        <span>바쁜 하루 한 끼라도 제대로 요리해 먹자 !</span>
+        <div>
+            <p class="BigText">하</p><p class="SmallText">루</p>
+        </div>
+        <div>
+            <p class="BigText">오</p><p class="SmallText">분</p>
+        </div>
+        <div>
+            <p class="SmallText">요</p><p class="BigText">리</p>
+        </div>
     </header>
+    <div class="clear">
+        <span class="subTitle">바쁜 하루 한 끼라도 제대로 요리해 먹자 !</span>
+    </div>
     <main>
         <div id="selectBox">
-            <label for="recipeSort-select">요리 구분</label>
+            <div>
+                <label for="recipeSort-select">요리 구분</label>
                 <select name="recipeSort" id="recipeSort-select">
                     <option value="한식">한식</option>
                     <option value="중식">중식</option>
@@ -22,34 +33,51 @@
                     <option value="안주">안주</option>
                     <option value="기타">기타</option>
                 </select>
-            <label for="cookingTime-select">조리 시간</label>
-            <select name="cookingTime" id="cookingTime-select">
-                <option value="5분">5분</option>
-                <option value="10분">10분</option>
-                <option value="15분">15분</option>
-                <option value="20분">20분</option>
-                <option value="30분">30분</option>
-                <option value="60분">60분</option>
-            </select>
-            <label for="cookingLevel-select">실력 레벨</label>
-            <select name="cookingLevel" id="cookingLevel-select">
-                <option value="초보환영">초보환영</option>
-                <option value="보통">보통</option>
-                <option value="고수">고수</option>
-            </select>
+            </div>
+            <div>
+                <label for="cookingTime-select">조리 시간</label>
+                <select name="cookingTime" id="cookingTime-select">
+                    <option value="5분">5분</option>
+                    <option value="10분">10분</option>
+                    <option value="15분">15분</option>
+                    <option value="20분">20분</option>
+                    <option value="30분">30분</option>
+                    <option value="60분">60분</option>
+                </select>
+            </div>
+            <div>
+                <label for="cookingLevel-select">실력 레벨</label>
+                <select name="cookingLevel" id="cookingLevel-select">
+                    <option value="초보환영">초보환영</option>
+                    <option value="보통">보통</option>
+                    <option value="고수">고수</option>
+                </select>
+            </div>
         </div>
         <section id="recipeList">
             <div class="recipe">
                 <h1>마라 파스타</h1>
                 <p>다양한 해산물과 마라 !</p>
             </div>
+            <div class="recipe">
+                <h1>샐러드 파스타</h1>
+                <p>채소와 파스타 !</p>
+            </div>
+            <div class="recipe">
+                <h1>유부초밥</h1>
+                <p>다양한 토핑 !</p>
+            </div>
+            <div class="recipe">
+                <h1>대하구이</h1>
+                <p>새우조아</p>
+            </div>
         </section>
     </main>
     <section id="exampleImage">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+        <img src="./Img/KakaoTalk_20200913_171939765_01.jpg" alt="">
+        <img src="./Img/KakaoTalk_20200913_171939765_02.jpg" alt="">
+        <img src="./Img/KakaoTalk_20200913_171939765_03.jpg" alt="">
+        <img src="./Img/KakaoTalk_20200913_171939765_04.jpg" alt="">
     </section>
     <footer>
        <span>Copyright &copyright 2020 H0zzae</span>

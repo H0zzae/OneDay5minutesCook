@@ -93,11 +93,12 @@ main {
     margin: 0 0 7px 20px;
 }
 #exampleImage {
+    display: grid;
     margin: auto;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: space-around;
+    /*display: flex;*/
+    /*align-content: center;*/
+    /*align-items: center;*/
+    /*justify-content: space-around;*/
     width: 821px;
 }
 #exampleImage img {

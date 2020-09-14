@@ -82,6 +82,10 @@ main {
 .recipe {
     margin: 10px 20px 0 20px;
     border-bottom: 1px solid #B6B9BF;
+    transition : background-color 1s;
+}
+.recipe:hover {
+    background-color: #E4E4E4;
 }
 .recipe h1 {
     font-size: 24px;
@@ -94,17 +98,18 @@ main {
 }
 #exampleImage {
     display: grid;
+    grid-auto-flow: column;
     margin: auto;
-    /*display: flex;*/
-    /*align-content: center;*/
-    /*align-items: center;*/
-    /*justify-content: space-around;*/
     width: 821px;
 }
 #exampleImage img {
     width: 182px;
     height: 182px;
     border-radius: 20px;
+    transition : opacity 1s;
+}
+#exampleImage img:hover {
+    opacity: 0.5;
 }
 footer{
     margin-top: 20px;

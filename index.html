@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>하오리</title>
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -20,6 +21,8 @@
     <div class="clear">
         <span class="subTitle">바쁜 하루 한 끼라도 제대로 요리해 먹자 !</span>
     </div>
+    <img id="haori" src="./Img/HaoriIcon.svg" alt="하오리 아이콘">
+    <img id="haoriFace"src="./Img/HaoriFaceIcon.svg" alt="하오리 얼굴 아이콘">
     <main>
         <div id="selectBox">
             <div>
@@ -73,14 +76,45 @@
             </div>
         </section>
     </main>
-    <section id="exampleImage">
+    <section class="exampleImage">
         <img src="./Img/KakaoTalk_20200913_171939765_01.jpg" alt="">
         <img src="./Img/KakaoTalk_20200913_171939765_02.jpg" alt="">
         <img src="./Img/KakaoTalk_20200913_171939765_03.jpg" alt="">
         <img src="./Img/KakaoTalk_20200913_171939765_04.jpg" alt="">
+        <img src="./Img/KakaoTalk_20200920_030532013.jpg" alt="">
+        <img src="./Img/KakaoTalk_20200920_030532013_01.jpg" alt="">
+        <img src="./Img/KakaoTalk_20200920_030532013_02.jpg" alt="">
     </section>
     <footer>
        <span>Copyright &copyright 2020 H0zzae</span>
     </footer>
+
+    <script>
+        let imgList = document.querySelector(".exampleImage");
+        console.log(imgList.querySelectorAll("img"))
+        window.onload = function () {
+            let imgCnt = 0;
+            imgList.querySelectorAll("img").forEach(()=>{
+                imgCnt++;
+            });
+            imgList.style.width = (imgList.offsetWidth * imgCnt) + "px";
+
+            SlideShow(imgCnt);
+        };
+        function SlideShow(imgCnt) {
+            imgList.style.left = "0px";
+                let curIndex = 0;
+
+                setInterval(()=>{
+                    imgList.style.transition = "transform 2s ease-out";
+                    imgList.style.transform = "translate3d(-" + 212*(curIndex+1)+"px, 0px, 0px";
+                    curIndex++;
+
+                    if(curIndex ===imgCnt-4) {
+                        curIndex =-1;
+                    }
+                },3000);
+        }
+    </script>
 </body>
 </html>

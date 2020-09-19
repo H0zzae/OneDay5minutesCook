@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'SDKukdetopokki-Lt';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SDKukdetopokki-aLt00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body { /*body 태그 초기화*/
     margin: 0;
     padding: 0;
@@ -19,6 +27,7 @@ header {
 header div{
     align-content: center;
     display: flex;
+    font-family: 'SDKukdetopokki-Lt';
 }
 header .BigText {
     font-size: 64px;
@@ -37,6 +46,16 @@ header .SmallText {
     color: #A4A4A4;
     font-size: 18px;
     line-height: 21px;
+}
+#haori{
+    float: left;
+    position: absolute;
+    left: 5%;
+    top: 360px;
+    z-index: -1;
+}
+#haoriFace {
+    display: none;
 }
 main {
     margin-top: 72px;
@@ -69,8 +88,10 @@ main {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    font-size: 18px;
 }
 #recipeList {
+    position: relative;
     width: 544px;
     margin-top :40px;
     background-color: #FFFFFF;
@@ -96,19 +117,19 @@ main {
     color: #72767D;
     margin: 0 0 7px 20px;
 }
-#exampleImage {
+.exampleImage {
     display: grid;
     grid-auto-flow: column;
     margin: auto;
     width: 821px;
 }
-#exampleImage img {
+.exampleImage img {
     width: 182px;
     height: 182px;
     border-radius: 20px;
     transition : opacity 1s;
 }
-#exampleImage img:hover {
+.exampleImage img:hover {
     opacity: 0.5;
 }
 footer{
@@ -122,4 +143,131 @@ footer{
 }
 footer span {
     font-size: 14px;
+}
+
+@media (max-width: 768px){
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    header{
+        margin : 0 auto 48px auto;
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+    }
+    header div{
+        align-content: center;
+        display: flex;
+    }
+    header .BigText {
+        font-size: 64px;
+    }
+    header .SmallText {
+        font-size: 36px;
+        margin: 0 20px;
+        align-self: flex-end;
+    }
+    .clear{
+        display: none;
+    }
+    #haori {
+        width: 151px;
+        float: left;
+        position: absolute;
+        left: 13%;
+        top: 200px;
+        z-index: -1;
+    }
+    #haoriFace {
+        display: none;
+    }
+    main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+    #selectBox {
+        margin-left: 180px;
+        display: flex;
+        flex-direction: column;
+        width: 389px;
+        justify-content: space-between;
+        align-content: space-between;
+        height: 192px;
+    }
+    #selectBox div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #selectBox div label {
+        font-size: 24px;
+    }
+    #selectBox div select {
+        width: 267px;
+        height: 44px;
+        padding: 8px 0 8px 20px;
+        background: #FFFFFF url("./Img/Down.png") no-repeat 95% 50%;
+        border : 1px solid #E5E8ED;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    #recipeList {
+        position: relative;
+        margin-top :40px;
+        background-color: #FFFFFF;
+        border: 1px solid #E5E8ED;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+        padding-top: 13px;
+        margin-bottom: 40px;
+    }
+    .recipe {
+        margin: 10px 20px 0 20px;
+        border-bottom: 1px solid #B6B9BF;
+        transition : background-color 1s;
+    }
+    .recipe:hover {
+        background-color: #E4E4E4;
+    }
+    .recipe h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+    .recipe p {
+        font-size: 16px;
+        color: #72767D;
+        margin: 0 0 7px 20px;
+    }
+    .exampleImage {
+        display: flex;
+        flex-direction: row;
+    }
+    .exampleImage img {
+        width: 182px;
+        height: 182px;
+        border-radius: 20px;
+        transition : opacity 1s;
+        margin-right: 30px;
+    }
+    .exampleImage img:focus {
+        opacity: 0.5;
+    }
+    footer{
+        margin-top: 20px;
+        width: 100%;
+        height: 91px;
+        background-color: #C4C4C4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer span {
+        font-size: 14px;
+    }
 }

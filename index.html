@@ -91,30 +91,32 @@
 
     <script>
         let imgList = document.querySelector(".exampleImage");
-        console.log(imgList.querySelectorAll("img"))
-        window.onload = function () {
-            let imgCnt = 0;
-            imgList.querySelectorAll("img").forEach(()=>{
-                imgCnt++;
-            });
-            imgList.style.width = (imgList.offsetWidth * imgCnt) + "px";
+        if ((320<document.body.clientWidth)&&(document.body.clientWidth<769)){
+            window.onload = function () {
+                let imgCnt = 0;
+                imgList.querySelectorAll("img").forEach(()=>{
+                    imgCnt++;
+                });
+                imgList.style.width = (imgList.offsetWidth * imgCnt) + "px";
 
-            SlideShow(imgCnt);
-        };
+                SlideShow(imgCnt);
+            };
+        }
         function SlideShow(imgCnt) {
             imgList.style.left = "0px";
-                let curIndex = 0;
+            let curIndex = 0;
 
-                setInterval(()=>{
-                    imgList.style.transition = "transform 2s ease-out";
-                    imgList.style.transform = "translate3d(-" + 212*(curIndex+1)+"px, 0px, 0px";
-                    curIndex++;
+            setInterval(()=>{
+                imgList.style.transition = "transform 2s ease-out";
+                imgList.style.transform = "translate3d(-" + 212*(curIndex+1)+"px, 0px, 0px";
+                curIndex++;
 
-                    if(curIndex ===imgCnt-4) {
-                        curIndex =-1;
-                    }
-                },3000);
+                if(curIndex ===imgCnt-4) {
+                    curIndex =-1;
+                }
+            },3000);
         }
+
     </script>
 </body>
 </html>

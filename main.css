@@ -15,6 +15,7 @@ body { /*body 태그 초기화*/
     font-style: normal;
     font-weight: normal;
     background: #FFFAF2;
+    overflow-x: hidden;
 }
 header {
     margin : 40px auto 15px auto;
@@ -92,7 +93,6 @@ main {
 }
 #recipeList {
     position: relative;
-    width: 544px;
     margin-top :40px;
     background-color: #FFFFFF;
     border: 1px solid #E5E8ED;
@@ -110,7 +110,7 @@ main {
 }
 .recipe h1 {
     font-size: 24px;
-    margin: 0;
+    margin: 0 140px 0 0;
 }
 .recipe p {
     font-size: 16px;
@@ -120,7 +120,7 @@ main {
 .exampleImage {
     display: grid;
     grid-auto-flow: column;
-    margin: auto;
+    margin: 0;
     width: 821px;
 }
 .exampleImage img {
@@ -269,5 +269,95 @@ footer span {
     }
     footer span {
         font-size: 14px;
+    }
+}
+@media (max-width: 320px) {
+    body {
+        width: 100%;
+    }
+    header {
+        margin: 23px 0 0 23px;
+        justify-content: flex-start;
+        width: auto;
+        height: 42px;
+    }
+    header .BigText{
+        font-size: 36px;
+    }
+    header .SmallText {
+        display: none;
+    }
+    .clear {
+        margin-top: 15px;
+        display: block;
+        overflow: hidden;
+        float: left;
+        margin-left: 23px;
+    }
+    .subTitle {
+        color: #A4A4A4;
+        font-size: 11px;
+        width: 210px;
+    }
+    #haori {
+        display: none;
+    }
+    #haoriFace {
+        display: inline;
+        position: relative;
+        float: left;
+        margin: -60px 0 0 130px;
+    }
+    main {
+        display: flex;
+        align-content: center;
+    }
+    #selectBox {
+        margin: 30px 0 0 0;
+        display: grid;
+        grid-template-rows: repeat(2,1fr);
+        row-gap: 25px;
+        height: auto;
+        justify-content: center;
+    }
+    #selectBox div {
+    }
+    #selectBox div label {
+        margin-right: 20px;
+        font-size:14px;
+    }
+    #selectBox div select {
+        font-size: 14px;
+        height: 29px;
+        padding: 5px 0 0 9px ;
+        min-width: 176px;
+        width: auto;
+    }
+    #recipeList {
+        margin : 30px auto;
+    }
+    .recipe h1 {
+        font-size: 14px;
+        margin-right: 100px;
+    }
+    .recipe p {
+        font-size: 12px;
+    }
+    .exampleImage {
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(4,118px);
+        grid-template-columns: repeat(2,118px);
+        justify-content: center;
+    }
+    .exampleImage img {
+        width: 118px;
+        height: 118px;
+    }
+    .exampleImage img:hover {
+        transform: scale(1.2,1.2);
+        opacity: 1;
+        z-index: 1;
+        transition: transform 1s;
     }
 }

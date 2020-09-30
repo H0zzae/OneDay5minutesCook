@@ -1,0 +1,201 @@
+@font-face {
+    font-family: 'SDKukdetopokki-Lt';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SDKukdetopokki-aLt00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*
+body {}
+header {}
+header div {}
+header .BigText {}
+header .SmallText {}
+.clear {}
+.subTitle {}
+#haoriFace {}
+main {}
+.mainHeader {}
+.recipeIntro {}
+.recipeName {}
+.meterials {}
+.recipeIntro div {}
+.cookingTime {}
+.cookingLevel {}
+.recipeDetail {}
+.recipeDetail ol {}
+.recipeDetail ol li {}
+.tip {}
+.tip h1 {}
+.tip p {}
+.recommendHeart {}
+#Heart {}
+#Heart p {}
+#haoriIcon {}
+footer {}
+footer span {}
+*/
+body { /*body 태그 초기화*/
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    background: #FFFAF2;
+    overflow-x: hidden;
+}
+header {
+    margin : 40px auto 15px auto;
+    padding-bottom: 15px;
+    display: flex;
+    height: 140px;
+    width: 544px;
+    justify-content: space-between;
+}
+header div{
+    align-content: center;
+    display: flex;
+    font-family: 'SDKukdetopokki-Lt';
+}
+header .BigText {
+    font-size: 64px;
+}
+header .SmallText {
+    font-size: 36px;
+    margin: 0 20px;
+    align-self: flex-end;
+}
+.clear {
+    overflow: hidden;
+}
+.subTitle {
+    float: right;
+    margin-right: 264px;
+    color: #A4A4A4;
+    font-size: 18px;
+    line-height: 21px;
+}
+#haoriFace {
+    display: none;
+}
+main{
+    margin: 40px 15%;
+    padding-top: 71px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 46px;
+}
+.mainHeader{
+    display: flex;
+}
+.mainHeader img {
+    width: 265px;
+    height: 265px;
+    border-radius: 20px;
+    margin-left: 10%;
+}
+.recipeIntro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.recipeName {
+    font-size: 48px;
+    margin: 0;
+    font-family: 'SDKukdetopokki-Lt';
+}
+.meterials {
+    justify-content: center;
+    width: 80%;
+    font-size: 18px;
+    margin: 0;
+}
+.recipeIntro div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 18px;
+}
+.cookingTime{
+    margin: 0;
+}
+.cookingLevel{
+    margin: 0;
+}
+.recipeDetail {
+    margin : 50px 10%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.recipeDetail ol {}
+.recipeDetail ol li {
+    margin-bottom: 10px;
+}
+.tip {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.tip h1 {
+    margin: 0;
+    font-family: 'SDKukdetopokki-Lt';
+}
+.tip p {}
+.recommendHeart {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#Heart {
+    width: 50px;
+    height: 50px;
+    background: url("./Img/unclickedHeart.svg") no-repeat;
+    background-size: contain;
+    border: none;
+    text-decoration: none;
+    cursor:pointer;
+    margin-right: 10px;
+}
+#Heart:focus {
+    background: url("./Img/clickedHeart.svg") no-repeat;
+    background-size: contain;
+    border: none;
+    text-decoration: none;
+    box-shadow: none;
+    outline: 0;
+}
+.recommendHeart p {
+    font-size: 36px;
+    margin: 0;
+    font-family: 'SDKukdetopokki-Lt';
+}
+.icon {
+    width: 80%;
+}
+#haoriIcon {
+    float: right;
+    opacity: .5;
+}
+footer{
+    margin-top: 20px;
+    width: 100%;
+    height: 130px;
+    background-color: #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer span {
+    font-size: 14px;
+}

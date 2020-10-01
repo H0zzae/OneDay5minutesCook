@@ -271,7 +271,7 @@ footer span {
         font-size: 14px;
     }
 }
-@media (max-width: 320px) {
+@media (max-width: 414px) {
     body {
         width: 100%;
     }

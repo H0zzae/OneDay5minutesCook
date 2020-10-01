@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-    <header>
+    <header OnClick="location.href='https://haori.kmuwink.com'">
         <div>
             <p class="BigText">하</p><p class="SmallText">루</p>
         </div>
@@ -58,7 +58,7 @@
             </div>
         </div>
         <section id="recipeList">
-            <div class="recipe">
+            <div class="recipe" OnClick="window.open('http://haori.kmuwink.com/recipePage.html')">
                 <h1>마라 파스타</h1>
                 <p>다양한 해산물과 마라 !</p>
             </div>
@@ -91,7 +91,7 @@
 
     <script>
         let imgList = document.querySelector(".exampleImage");
-        if ((320<document.body.clientWidth)&&(document.body.clientWidth<769)){
+        if ((414<document.body.clientWidth)&&(document.body.clientWidth<769)){
             window.onload = function () {
                 let imgCnt = 0;
                 imgList.querySelectorAll("img").forEach(()=>{

@@ -95,8 +95,8 @@ main{
 .mainHeader{
     display: flex;
 }
-.mainHeader img {
-    width: 265px;
+.exampleImage {
+    width: 354px;
     height: 265px;
     border-radius: 20px;
     margin-left: 10%;
@@ -132,14 +132,12 @@ main{
     margin: 0;
 }
 .recipeDetail {
+    display: block;
     margin : 50px 10%;
     font-size: 24px;
-    display: flex;
-    flex-direction: column;
+    line-height: 36px;
 }
-.recipeDetail ol {}
-.recipeDetail ol li {
-    margin-bottom: 10px;
+.recipeDetail p {
 }
 .tip {
     width: 80%;

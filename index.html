@@ -113,8 +113,7 @@
             }
             console.log(document.querySelectorAll('.exampleImage'));
             for(let i=0;i<8;i++){
-                console.log(listitems[i].snippet.thumbnails.high.url);
-                document.querySelector('.exampleImage').innerHTML +='<img src='+listitems[i].snippet.thumbnails.high.url+'>';
+                document.querySelector('.exampleImage').innerHTML +='<a href='+'https://youtu.be/'+listitems[i].snippet.resourceId.videoId+'>'+'<img src='+listitems[i].snippet.thumbnails.high.url+'></a>';
             }
 
         }

@@ -110,12 +110,7 @@ main {
 }
 .recipe h1 {
     font-size: 24px;
-    margin: 0 140px 0 0;
-}
-.recipe p {
-    font-size: 16px;
-    color: #72767D;
-    margin: 0 0 7px 20px;
+    margin: 0 140px 30px 0;
 }
 .exampleImage {
     display: grid;
@@ -239,11 +234,6 @@ footer span {
     .recipe h1 {
         font-size: 24px;
     }
-    .recipe p {
-        font-size: 16px;
-        color: #72767D;
-        margin: 0 0 7px 20px;
-    }
     .exampleImage {
         display: flex;
         flex-direction: row;
@@ -339,9 +329,6 @@ footer span {
     .recipe h1 {
         font-size: 14px;
         margin-right: 100px;
-    }
-    .recipe p {
-        font-size: 12px;
     }
     .exampleImage {
         width: 100%;

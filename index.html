@@ -59,20 +59,16 @@
         </div>
         <section id="recipeList">
             <div class="recipe" OnClick="window.open('http://haori.kmuwink.com/recipePage.html')">
-                <h1>마라 파스타</h1>
-                <p>다양한 해산물과 마라 !</p>
+                <h1 class="menu0">마라 파스타</h1>
             </div>
             <div class="recipe">
-                <h1>샐러드 파스타</h1>
-                <p>채소와 파스타 !</p>
+                <h1 class="menu1">샐러드 파스타</h1>
             </div>
             <div class="recipe">
-                <h1>유부초밥</h1>
-                <p>다양한 토핑 !</p>
+                <h1 class="menu2">유부초밥</h1>
             </div>
             <div class="recipe">
-                <h1>대하구이</h1>
-                <p>새우조아</p>
+                <h1 class="menu3">대하구이</h1>
             </div>
         </section>
     </main>
@@ -116,7 +112,18 @@
                 }
             },3000);
         }
+        async function main() {
+            const url = 'https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PLoABXt5mipg6mIdGKBuJlv5tmQFAQ3OYr&part=snippet&maxResults=4&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
+            const responseData = await (await fetch(url)).json();
+            const listitems = responseData.items;
+            for(let i=0;i<4;i++){
+                document.querySelector('.menu'+i).innerHTML = await listitems[i].snippet.title;
+                console.log(listitems[i].snippet.title);
+            };
 
+            console.log(listitems);
+        }
+        main();
     </script>
 </body>
 </html>

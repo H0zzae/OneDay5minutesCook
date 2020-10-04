@@ -59,28 +59,20 @@
         </div>
         <section id="recipeList">
             <div class="recipe" OnClick="window.open('http://haori.kmuwink.com/recipePage.html')">
-                <h1 class="menu0">마라 파스타</h1>
+                <h1 class="menu0"></h1>
             </div>
             <div class="recipe">
-                <h1 class="menu1">샐러드 파스타</h1>
+                <h1 class="menu1"></h1>
             </div>
             <div class="recipe">
-                <h1 class="menu2">유부초밥</h1>
+                <h1 class="menu2"></h1>
             </div>
             <div class="recipe">
-                <h1 class="menu3">대하구이</h1>
+                <h1 class="menu3"></h1>
             </div>
         </section>
     </main>
-    <section class="exampleImage">
-        <img src="./Img/KakaoTalk_20200913_171939765_01.jpg" alt="">
-        <img src="./Img/KakaoTalk_20200913_171939765_02.jpg" alt="">
-        <img src="./Img/KakaoTalk_20200913_171939765_03.jpg" alt="">
-        <img src="./Img/KakaoTalk_20200913_171939765_04.jpg" alt="">
-        <img src="./Img/KakaoTalk_20200920_030532013.jpg" alt="">
-        <img src="./Img/KakaoTalk_20200920_030532013_01.jpg" alt="">
-        <img src="./Img/KakaoTalk_20200920_030532013_02.jpg" alt="">
-    </section>
+    <section class="exampleImage"></section>
     <footer>
        <span>Copyright &copyright 2020 H0zzae</span>
     </footer>
@@ -113,15 +105,18 @@
             },3000);
         }
         async function main() {
-            const url = 'https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PLoABXt5mipg6mIdGKBuJlv5tmQFAQ3OYr&part=snippet&maxResults=4&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
+            const url = 'https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PLoABXt5mipg6mIdGKBuJlv5tmQFAQ3OYr&part=snippet&maxResults=8&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
             const responseData = await (await fetch(url)).json();
             const listitems = responseData.items;
             for(let i=0;i<4;i++){
-                document.querySelector('.menu'+i).innerHTML = await listitems[i].snippet.title;
-                console.log(listitems[i].snippet.title);
-            };
+                document.querySelector('.menu'+i).innerHTML = listitems[i].snippet.title;
+            }
+            console.log(document.querySelectorAll('.exampleImage'));
+            for(let i=0;i<8;i++){
+                console.log(listitems[i].snippet.thumbnails.high.url);
+                document.querySelector('.exampleImage').innerHTML +='<img src='+listitems[i].snippet.thumbnails.high.url+'>';
+            }
 
-            console.log(listitems);
         }
         main();
     </script>

@@ -122,7 +122,6 @@ main {
 .exampleImage img {
     width: 182px;
     height: 182px;
-    border-radius: 20px;
     transition : opacity 1s;
 }
 .exampleImage img:hover {
@@ -241,9 +240,7 @@ footer span {
     .exampleImage img {
         width: 182px;
         height: 182px;
-        border-radius: 20px;
         transition : opacity 1s;
-        margin-right: 30px;
     }
     .exampleImage img:focus {
         opacity: 0.5;

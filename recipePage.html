@@ -71,11 +71,9 @@
             const recipeDetail = array[2].split('Beef')[0];
             let rd = document.querySelector('.recipeDetail');
             let recipeArray = recipeDetail.split('다.');
-            let TipArray = [];
             for (let i=0;i<recipeArray.length-1; i++){
                 if (recipeArray[i].includes('Tip')){
                     document.querySelector('.tip p').innerHTML +=recipeArray[i].split('Tip: ')[1]+'다.'+'<br>';
-                    console.log(recipeArray[i]);
                 }
                 else{
                     rd.innerHTML+= recipeArray[i]+'다.'+'<br>';

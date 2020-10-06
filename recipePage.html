@@ -42,7 +42,6 @@
         </div>
         <div class="recommendHeart">
             <button id="Heart" onclick="like();"></button>
-            <p>17</p>
         </div>
     </main>
     <div class="icon">
@@ -52,17 +51,15 @@
         <span>Copyright &copyright 2020 H0zzae</span>
     </footer>
     <script>
-        let clicked = false;
+        let likeClicked = false;
         function like(){
-            if (!clicked){
+            if (!likeClicked){
                 let likeNum = document.querySelector('.recommendHeart p');
-                likeNum.innerHTML = parseInt(likeNum.innerHTML)+1;
+                document.querySelector('#Heart').style.transition = 'background 1s';
                 document.querySelector('#Heart').style.background = 'url("./Img/clickedHeart.svg") no-repeat';
                 document.querySelector('#Heart').style.backgroundSize = 'contain';
-                clicked = true;
+                likeClicked = true;
             }
-
-
         }
         async function main(){
             const videoId= 'v32NjYn5pSc';

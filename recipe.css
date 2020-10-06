@@ -30,7 +30,6 @@ main {}
 .tip p {}
 .recommendHeart {}
 #Heart {}
-.recommendHeart p {}
 #haoriIcon {}
 footer {}
 footer span {}
@@ -166,11 +165,6 @@ main{
     cursor:pointer;
     margin-right: 10px;
 }
-.recommendHeart p {
-    font-size: 36px;
-    margin: 0;
-    font-family: 'SDKukdetopokki-Lt';
-}
 .icon {
     width: 80%;
 }
@@ -220,7 +214,6 @@ footer span {
     .tip p {}
     .recommendHeart {}
     #Heart {}
-    .recommendHeart p {}
     #haoriIcon {}
     footer {}
     footer span {}
@@ -319,9 +312,6 @@ footer span {
     #Heart {
         width: 30px;
         height: 30px;
-    }
-    .recommendHeart p {
-        font-size: 24px;
     }
     #haoriIcon {
         display: none;

@@ -58,16 +58,16 @@
             </div>
         </div>
         <section id="recipeList">
-            <div class="recipe" OnClick="window.open('http://haori.kmuwink.com/recipePage.html')">
+            <div class="recipe recipe0" onclick="">
                 <h1 class="menu0"></h1>
             </div>
-            <div class="recipe">
+            <div class="recipe recipe1" onclick="">
                 <h1 class="menu1"></h1>
             </div>
-            <div class="recipe">
+            <div class="recipe recipe2" onclick="">
                 <h1 class="menu2"></h1>
             </div>
-            <div class="recipe">
+            <div class="recipe recipe3" onclick="">
                 <h1 class="menu3"></h1>
             </div>
         </section>
@@ -78,6 +78,7 @@
     </footer>
 
     <script>
+
         let imgList = document.querySelector(".exampleImage");
         if ((414<document.body.clientWidth)&&(document.body.clientWidth<769)){
             window.onload = function () {
@@ -110,8 +111,10 @@
             const listitems = responseData.items;
             for(let i=0;i<4;i++){
                 document.querySelector('.menu'+i).innerHTML = listitems[i].snippet.title;
+                document.querySelector('.recipe'+i).onclick = ()=>{
+                    window.open('./recipePage.html?vedioId='+listitems[i].snippet.resourceId.videoId);
+                };
             }
-            console.log(document.querySelectorAll('.exampleImage'));
             for(let i=0;i<8;i++){
                 document.querySelector('.exampleImage').innerHTML +='<a href='+'https://youtu.be/'+listitems[i].snippet.resourceId.videoId+'>'+'<img src='+listitems[i].snippet.thumbnails.high.url+'></a>';
             }

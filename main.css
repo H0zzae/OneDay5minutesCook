@@ -107,6 +107,7 @@ main {
 }
 .recipe:hover {
     background-color: #E4E4E4;
+    cursor: pointer;
 }
 .recipe h1 {
     font-size: 24px;
@@ -226,9 +227,6 @@ footer span {
         margin: 10px 20px 0 20px;
         border-bottom: 1px solid #B6B9BF;
         transition : background-color 1s;
-    }
-    .recipe:hover {
-        background-color: #E4E4E4;
     }
     .recipe h1 {
         font-size: 24px;

@@ -62,9 +62,10 @@
             }
         }
         async function main(){
-            const videoId= 'v32NjYn5pSc';
-            const url ='https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+videoId+'&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
-            const responseData = await (await fetch(url)).json();
+            const url = location.href;
+            const videoId= url.slice(url.indexOf('?')+1, url.length).split('=')[1];
+            const fetchurl ='https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+videoId+'&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
+            const responseData = await (await fetch(fetchurl)).json();
 
             const thumbnails = responseData.items[0].snippet.thumbnails.maxres.url;
             document.querySelector('.exampleImage').src = thumbnails;

@@ -166,14 +166,6 @@ main{
     cursor:pointer;
     margin-right: 10px;
 }
-#Heart:focus {
-    background: url("./Img/clickedHeart.svg") no-repeat;
-    background-size: contain;
-    border: none;
-    text-decoration: none;
-    box-shadow: none;
-    outline: 0;
-}
 .recommendHeart p {
     font-size: 36px;
     margin: 0;

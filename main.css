@@ -4,8 +4,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
-
 body { /*body 태그 초기화*/
     margin: 0;
     padding: 0;
@@ -66,52 +64,37 @@ main {
     align-items: center;
     justify-content: center;
 }
-#selectBox {
-    display: flex;
-    flex-direction: row;
-    width: 507px;
-    justify-content: space-between;
-}
-#selectBox div {
-    display: flex;
-    flex-direction: column;
-}
-#selectBox div label {
-    font-size: 18px;
-    margin-bottom: 6px;
-}
-#selectBox div select {
-    width: 149px;
-    height: 32px;
-    padding: 5px 0 6px 10px;
-    background: #FFFFFF url("./Img/Down.png") no-repeat 95% 50%;
-    border : 1px solid #E5E8ED;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    font-size: 18px;
-}
 #recipeList {
     position: relative;
     margin-top :40px;
     background-color: #FFFFFF;
     border: 1px solid #E5E8ED;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
-    padding-top: 13px;
     margin-bottom: 94px;
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    padding: 0 10px 0 10px;
+}
+::-webkit-scrollbar {
+     display: none !important;
 }
 .recipe {
-    margin: 10px 20px 0 20px;
     border-bottom: 1px solid #B6B9BF;
-    transition : background-color 1s;
+    text-align: center;
+    width: 100%;
 }
-.recipe:hover {
+.menu {
+    font-size: 24px;
+    padding: 30px 0 30px 0;
+    margin: 0;
+    transition : background-color 1s;
+    width: 100%;
+}
+.menu:hover {
     background-color: #E4E4E4;
     cursor: pointer;
-}
-.recipe h1 {
-    font-size: 24px;
-    margin: 0 140px 30px 0;
 }
 .exampleImage {
     display: grid;
@@ -184,36 +167,6 @@ footer span {
         align-items: center;
         margin: 0 auto;
     }
-    #selectBox {
-        margin-left: 180px;
-        display: flex;
-        flex-direction: column;
-        width: 389px;
-        justify-content: space-between;
-        align-content: space-between;
-        height: 192px;
-    }
-    #selectBox div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-    #selectBox div label {
-        font-size: 24px;
-    }
-    #selectBox div select {
-        width: 267px;
-        height: 44px;
-        padding: 8px 0 8px 20px;
-        background: #FFFFFF url("./Img/Down.png") no-repeat 95% 50%;
-        border : 1px solid #E5E8ED;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border-radius: 5px;
-        font-size: 20px;
-    }
     #recipeList {
         position: relative;
         margin-top :40px;
@@ -228,7 +181,7 @@ footer span {
         border-bottom: 1px solid #B6B9BF;
         transition : background-color 1s;
     }
-    .recipe h1 {
+    .menu {
         font-size: 24px;
     }
     .exampleImage {
@@ -297,31 +250,10 @@ footer span {
         display: flex;
         align-content: center;
     }
-    #selectBox {
-        margin: 30px 0 0 0;
-        display: grid;
-        grid-template-rows: repeat(2,1fr);
-        row-gap: 25px;
-        height: auto;
-        justify-content: center;
-    }
-    #selectBox div {
-    }
-    #selectBox div label {
-        margin-right: 20px;
-        font-size:14px;
-    }
-    #selectBox div select {
-        font-size: 14px;
-        height: 29px;
-        padding: 5px 0 0 9px ;
-        min-width: 176px;
-        width: auto;
-    }
     #recipeList {
         margin : 30px auto;
     }
-    .recipe h1 {
+    .menu {
         font-size: 14px;
         margin-right: 100px;
     }

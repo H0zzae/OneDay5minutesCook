@@ -36,57 +36,12 @@
         </div>
     </header>
     <div class="clear">
-        <span class="subTitle">바쁜 하루 한 끼라도 제대로 요리해 먹자 !</span>
+        <span class="subTitle">백종원의 레시피로 제대로 된 하루 한끼!</span>
     </div>
     <img id="haori" src="./Img/HaoriIcon.svg" alt="하오리 아이콘">
     <img id="haoriFace"src="./Img/HaoriFaceIcon.svg" alt="하오리 얼굴 아이콘">
     <main>
-        <div id="selectBox">
-            <div>
-                <label for="recipeSort-select">요리 구분</label>
-                <select name="recipeSort" id="recipeSort-select">
-                    <option value="한식">한식</option>
-                    <option value="중식">중식</option>
-                    <option value="일식">일식</option>
-                    <option value="양식">양식</option>
-                    <option value="간식">간식</option>
-                    <option value="안주">안주</option>
-                    <option value="기타">기타</option>
-                </select>
-            </div>
-            <div>
-                <label for="cookingTime-select">조리 시간</label>
-                <select name="cookingTime" id="cookingTime-select">
-                    <option value="5분">5분</option>
-                    <option value="10분">10분</option>
-                    <option value="15분">15분</option>
-                    <option value="20분">20분</option>
-                    <option value="30분">30분</option>
-                    <option value="60분">60분</option>
-                </select>
-            </div>
-            <div>
-                <label for="cookingLevel-select">실력 레벨</label>
-                <select name="cookingLevel" id="cookingLevel-select">
-                    <option value="초보환영">초보환영</option>
-                    <option value="보통">보통</option>
-                    <option value="고수">고수</option>
-                </select>
-            </div>
-        </div>
         <section id="recipeList">
-            <div class="recipe recipe0" onclick="">
-                <h1 class="menu0"></h1>
-            </div>
-            <div class="recipe recipe1" onclick="">
-                <h1 class="menu1"></h1>
-            </div>
-            <div class="recipe recipe2" onclick="">
-                <h1 class="menu2"></h1>
-            </div>
-            <div class="recipe recipe3" onclick="">
-                <h1 class="menu3"></h1>
-            </div>
         </section>
     </main>
     <section class="exampleImage"></section>
@@ -95,9 +50,8 @@
     </footer>
 
     <script>
-
         let imgList = document.querySelector(".exampleImage");
-        if ((414<document.body.clientWidth)&&(document.body.clientWidth<769)){
+        if ((414<document.body.clientWidth)){
             window.onload = function () {
                 let imgCnt = 0;
                 imgList.querySelectorAll("img").forEach(()=>{
@@ -123,19 +77,17 @@
             },3000);
         }
         async function main() {
-            const url = 'https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PLoABXt5mipg6mIdGKBuJlv5tmQFAQ3OYr&part=snippet&maxResults=8&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
+            const resultNum=30;
+            const url = 'https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PLoABXt5mipg6mIdGKBuJlv5tmQFAQ3OYr&part=snippet&maxResults='+resultNum+'&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
             const responseData = await (await fetch(url)).json();
             const listitems = responseData.items;
-            for(let i=0;i<4;i++){
-                document.querySelector('.menu'+i).innerHTML = listitems[i].snippet.title;
-                document.querySelector('.recipe'+i).onclick = ()=>{
-                    window.open('./recipePage.html?vedioId='+listitems[i].snippet.resourceId.videoId);
-                };
+            for(let i=0;i<resultNum;i++){
+                const videoUrl = './recipePage.html?videoId='+listitems[i].snippet.resourceId.videoId;
+                document.querySelector('#recipeList').innerHTML += '<div class="recipe" onclick ="window.open("'+videoUrl+'")/><h1 class="menu">'+listitems[i].snippet.title+'</h1></div>';
             }
-            for(let i=0;i<8;i++){
+            for(let i=0;i<resultNum;i++){
                 document.querySelector('.exampleImage').innerHTML +='<a href='+'https://youtu.be/'+listitems[i].snippet.resourceId.videoId+'>'+'<img src='+listitems[i].snippet.thumbnails.high.url+'></a>';
             }
-
         }
         main();
     </script>

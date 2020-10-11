@@ -3,4 +3,4 @@
 
 https://haori.kmuwink.com
 
-공공 api활용한 반응형 웹 사이트
+youtubeApi 활용한 백종원 레시피 정리사이트🍽👨‍🍳

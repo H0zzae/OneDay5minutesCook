@@ -79,9 +79,9 @@
             }
         }
         async function main(){
-            // const url = location.href;
+            const url = location.href;
             // test
-            const url = 'https://haori.kmuwink.com/recipePage.html?videoId=v32NjYn5pSc';
+            // const url = 'https://haori.kmuwink.com/recipePage.html?videoId=v32NjYn5pSc';
             console.log(url);
             const videoId= url.slice(url.indexOf('?')+1, url.length).split('=')[1];
             const fetchurl ='https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+videoId+'&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';

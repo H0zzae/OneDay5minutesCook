@@ -44,7 +44,7 @@
         <div class="mainHeader">
             <div class="example">
                 <img class="image" src="" alt="요리 예시">
-                <img id="youtubeLogo" src="./Img/yt_logo_rgb_light.png" alt="유튜브 로고">
+                <a class="youtube" href="#"><img id="youtubeLogo" src="./Img/yt_logo_rgb_light.png" alt="유튜브 로고"></a>
             </div>
             <div class="recipeIntro">
                 <h1 class="recipeName"></h1>
@@ -82,15 +82,15 @@
             const url = location.href;
             // test
             // const url = 'https://haori.kmuwink.com/recipePage.html?videoId=v32NjYn5pSc';
-            console.log(url);
+            // console.log(url);
             const videoId= url.slice(url.indexOf('?')+1, url.length).split('=')[1];
             const fetchurl ='https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+videoId+'&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
             const responseData = await (await fetch(fetchurl)).json();
-
             const thumbnails = responseData.items[0].snippet.thumbnails.maxres.url;
             document.querySelector('.image').src = thumbnails;
             const menuTitle = responseData.items[0].snippet.title;
             document.querySelector('.recipeName').innerHTML = menuTitle;
+            document.querySelector('.youtube').href = "https://youtu.be/"+videoId.toString();
 
             const description = responseData.items[0].snippet.description;
             let array = description.split(']');

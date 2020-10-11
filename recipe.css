@@ -94,11 +94,22 @@ main{
 .mainHeader{
     display: flex;
 }
-.exampleImage {
+.example {
     width: 354px;
-    height: 265px;
-    border-radius: 20px;
     margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+.image {
+    width: 354px;
+    height: auto;
+}
+#youtubeLogo{
+    width: 140px;
+    height: auto;
+    margin-top: 30px;
 }
 .recipeIntro {
     display: flex;
@@ -116,13 +127,6 @@ main{
     width: 80%;
     font-size: 18px;
     margin: 0;
-}
-.recipeIntro div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    font-size: 18px;
 }
 .cookingTime{
     margin: 0;
@@ -185,38 +189,28 @@ footer span {
     font-size: 14px;
 }
 @media (max-width: 1024px){
-    body {}
-    header {}
-    header div {}
-    header .BigText {}
-    header .SmallText {}
-    .clear {}
     .subTitle {
         display: none;
     }
-    #haoriFace {}
+    .recipeName {
+        font-size: 24px;
+    }
     main {
         margin: 40px;
     }
-    .mainHeader {}
-    .mainHeader img {}
-    .recipeIntro {}
-    .recipeName {}
-    .meterials {}
-    .recipeIntro div {}
-    .cookingTime {}
-    .cookingLevel {}
-    .recipeDetail {}
-    .recipeDetail ol {}
-    .recipeDetail ol li {}
-    .tip {}
-    .tip h1 {}
-    .tip p {}
-    .recommendHeart {}
-    #Heart {}
-    #haoriIcon {}
-    footer {}
-    footer span {}
+}
+@media (max-width: 731px){
+    .mainHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .example {
+        margin : 0 0 20px 0;
+    }
+    .recipeName {
+        font-size: 30px;
+    }
 }
 @media (max-width: 414px) {
     body {
@@ -263,11 +257,15 @@ footer span {
         justify-content: center;
         align-items: center;
     }
-    .mainHeader img {
+    .example {
         margin: 0;
-        width: 143px;
-        height: 143px;
-        border-radius: 10px;
+    }
+    .image {
+        width: 240px;
+    }
+    #youtubeLogo {
+        width: 100px;
+        height: auto;
     }
     .recipeIntro {
         margin-top: 20px;
@@ -279,17 +277,12 @@ footer span {
         margin-top: 10px;
         font-size: 16px;
     }
-    .recipeIntro div {
-        justify-content: center;
-        margin-top: 10px;
-        font-size: 14px;
-    }
     .cookingTime {
         margin-right: 20px;
     }
     .cookingLevel {}
     .recipeDetail {
-        margin: 50px 10px 10px 0;
+        margin: 50px 10px 10px 10px;
         font-size: 14px;
     }
     .recipeDetail ol {

@@ -5,6 +5,23 @@
     <meta charset="UTF-8">
     <title>Recipe</title>
     <link rel="stylesheet" type="text/css" href="recipe.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 
@@ -25,14 +42,13 @@
     <img id="haoriFace" src="./Img/HaoriFaceIcon.svg" alt="하오리 얼굴 아이콘">
     <main>
         <div class="mainHeader">
-            <img class="exampleImage" src="" alt="요리 예시">
+            <div class="example">
+                <img class="image" src="" alt="요리 예시">
+                <img id="youtubeLogo" src="./Img/yt_logo_rgb_light.png" alt="유튜브 로고">
+            </div>
             <div class="recipeIntro">
                 <h1 class="recipeName"></h1>
                 <p class="meterials"></p>
-                <div>
-                    <p class="cookingTime">조리 시간 : 20분</p>
-                    <p class="cookingLevel">실력 레벨 : 초보환영</p>
-                </div>
             </div>
         </div>
         <div class="recipeDetail"></div>
@@ -63,13 +79,16 @@
             }
         }
         async function main(){
-            const url = location.href;
+            // const url = location.href;
+            // test
+            const url = 'https://haori.kmuwink.com/recipePage.html?videoId=v32NjYn5pSc';
+            console.log(url);
             const videoId= url.slice(url.indexOf('?')+1, url.length).split('=')[1];
             const fetchurl ='https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+videoId+'&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
             const responseData = await (await fetch(fetchurl)).json();
 
             const thumbnails = responseData.items[0].snippet.thumbnails.maxres.url;
-            document.querySelector('.exampleImage').src = thumbnails;
+            document.querySelector('.image').src = thumbnails;
             const menuTitle = responseData.items[0].snippet.title;
             document.querySelector('.recipeName').innerHTML = menuTitle;
 

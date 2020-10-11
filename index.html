@@ -39,7 +39,7 @@
         <span class="subTitle">백종원의 레시피로 제대로 된 하루 한끼!</span>
     </div>
     <img id="haori" src="./Img/HaoriIcon.svg" alt="하오리 아이콘">
-    <img id="haoriFace"src="./Img/HaoriFaceIcon.svg" alt="하오리 얼굴 아이콘">
+    <img id="haoriFace" src="./Img/HaoriFaceIcon.svg" alt="하오리 얼굴 아이콘">
     <main>
         <section id="recipeList">
         </section>
@@ -82,8 +82,8 @@
             const responseData = await (await fetch(url)).json();
             const listitems = responseData.items;
             for(let i=0;i<resultNum;i++){
-                const videoUrl = './recipePage.html?videoId='+listitems[i].snippet.resourceId.videoId;
-                document.querySelector('#recipeList').innerHTML += '<div class="recipe" onclick ="window.open("'+videoUrl+'")/><h1 class="menu">'+listitems[i].snippet.title+'</h1></div>';
+                const videoUrl = "https://haori.kmuwink.com/recipePage.html?videoId="+listitems[i].snippet.resourceId.videoId;
+                document.querySelector('#recipeList').innerHTML += '<div class="recipe" onClick ="window.open('+"'"+videoUrl+"')"+'"/><h1 class="menu">'+listitems[i].snippet.title+'</h1></div>';
             }
             for(let i=0;i<resultNum;i++){
                 document.querySelector('.exampleImage').innerHTML +='<a href='+'https://youtu.be/'+listitems[i].snippet.resourceId.videoId+'>'+'<img src='+listitems[i].snippet.thumbnails.high.url+'></a>';

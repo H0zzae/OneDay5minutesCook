@@ -93,12 +93,16 @@
             document.querySelector('.youtube').href = "https://youtu.be/"+videoId.toString();
 
             const description = responseData.items[0].snippet.description;
-            let array = description.split(']');
+            // console.log(description);
+            let array = description.split('재료 ]');
             const metarial = array[1];
             let meterials = document.querySelector('.meterials');
             meterials.innerHTML = '재료 :'+metarial.split('[')[0];
+            console.log(metarial);
+            console.log(array);
 
-            const recipeDetail = array[2];
+            const recipeDetail = array[1].split(']')[1];
+            console.log(recipeDetail);
             let rd = document.querySelector('.recipeDetail');
             let recipeArray = recipeDetail.split('다.');
             for (let i=0;i<recipeArray.length-1; i++){

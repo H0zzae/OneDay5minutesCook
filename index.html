@@ -24,7 +24,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <header OnClick="location.href='https://haori.kmuwink.com'">
+    <header OnClick="location.href='https://h0zzae.github.io/OneDay5minutesCook/'">
         <div>
             <p class="BigText">하</p><p class="SmallText">루</p>
         </div>
@@ -82,7 +82,7 @@
             const responseData = await (await fetch(url)).json();
             const listitems = responseData.items;
             for(let i=0;i<resultNum;i++){
-                const videoUrl = "https://haori.kmuwink.com/recipePage.html?videoId="+listitems[i].snippet.resourceId.videoId;
+                const videoUrl = "https://h0zzae.github.io/OneDay5minutesCook/recipePage.html?videoId="+listitems[i].snippet.resourceId.videoId;
                 document.querySelector('#recipeList').innerHTML += '<div class="recipe" onClick ="window.open('+"'"+videoUrl+"')"+'"/><h1 class="menu">'+listitems[i].snippet.title+'</h1></div>';
             }
             for(let i=0;i<resultNum;i++){

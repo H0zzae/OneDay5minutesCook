@@ -4,23 +4,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>하오리</title>
+    <script src="./recipe.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+<!--    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">-->
+<!--    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">-->
+<!--    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">-->
+<!--    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">-->
+<!--    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">-->
+<!--    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">-->
+<!--    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">-->
+<!--    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">-->
+<!--    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">-->
+<!--    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">-->
+<!--    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">-->
+<!--    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">-->
+<!--    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">-->
+<!--    <link rel="manifest" href="./favicon/manifest.json">-->
+<!--    <meta name="msapplication-TileColor" content="#ffffff">-->
+<!--    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">-->
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
@@ -43,53 +44,11 @@
     <main>
         <section id="recipeList">
         </section>
+        <button onclick="loadMore()" class="loadMore">레시피 더보기</button>
     </main>
     <section class="exampleImage"></section>
     <footer>
        <span>Copyright &copyright 2020 H0zzae</span>
     </footer>
-
-    <script>
-        let imgList = document.querySelector(".exampleImage");
-        if ((414<document.body.clientWidth)){
-            window.onload = function () {
-                let imgCnt = 0;
-                imgList.querySelectorAll("img").forEach(()=>{
-                    imgCnt++;
-                });
-                imgList.style.width = (imgList.offsetWidth * imgCnt) + "px";
-
-                SlideShow(imgCnt);
-            };
-        }
-        function SlideShow(imgCnt) {
-            imgList.style.left = "0px";
-            let curIndex = 0;
-
-            setInterval(()=>{
-                imgList.style.transition = "transform 2s ease-out";
-                imgList.style.transform = "translate3d(-" + 212*(curIndex+1)+"px, 0px, 0px";
-                curIndex++;
-
-                if(curIndex ===imgCnt-4) {
-                    curIndex =-1;
-                }
-            },3000);
-        }
-        async function main() {
-            const resultNum=30;
-            const url = 'https://www.googleapis.com/youtube/v3/playlistItems?playlistId=PLoABXt5mipg6mIdGKBuJlv5tmQFAQ3OYr&part=snippet&maxResults='+resultNum+'&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
-            const responseData = await (await fetch(url)).json();
-            const listitems = responseData.items;
-            for(let i=0;i<resultNum;i++){
-                const videoUrl = "https://h0zzae.github.io/OneDay5minutesCook/recipePage.html?videoId="+listitems[i].snippet.resourceId.videoId;
-                document.querySelector('#recipeList').innerHTML += '<div class="recipe" onClick ="window.open('+"'"+videoUrl+"')"+'"/><h1 class="menu">'+listitems[i].snippet.title+'</h1></div>';
-            }
-            for(let i=0;i<resultNum;i++){
-                document.querySelector('.exampleImage').innerHTML +='<a href='+'https://youtu.be/'+listitems[i].snippet.resourceId.videoId+'>'+'<img src='+listitems[i].snippet.thumbnails.high.url+'></a>';
-            }
-        }
-        main();
-    </script>
 </body>
 </html>

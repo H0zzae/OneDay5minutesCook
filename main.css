@@ -63,6 +63,7 @@ main {
     align-content: center;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 #recipeList {
     position: relative;
@@ -76,6 +77,7 @@ main {
     overflow-x: hidden;
     -ms-overflow-style: none;
     padding: 0 10px 0 10px;
+    width: 60%;
 }
 ::-webkit-scrollbar {
      display: none !important;
@@ -95,6 +97,18 @@ main {
 .menu:hover {
     background-color: #E4E4E4;
     cursor: pointer;
+}
+.loadMore {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #B6B9BF;
+    bottom: 53px;
+    background-color: #fff;
+    right: calc(20% - 10px);
 }
 .exampleImage {
     display: grid;

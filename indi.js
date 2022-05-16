@@ -2,6 +2,7 @@ let url, videoId, responseData, recipeInfo;
 window.onload = async function (){
     url = location.href;
     videoId = url.slice(url.indexOf('?')+1, url.length).split('=')[1];
+    console.log(url.slice(url.indexOf('?')+1, url.length).split('='))
     const fetchurl ='https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+videoId+'&key=AIzaSyAu4tqResCBND7Lc7QYc7SpxLyCX0N_2y4';
     responseData = await (await fetch(fetchurl)).json();
     recipeInfo = new recipeDetail(responseData.items[0], videoId);

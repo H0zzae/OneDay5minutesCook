@@ -31,7 +31,7 @@ class RecipeList {
         this.thumbsnail = thumbsnail
     }
     AddRecipeList() {
-        document.querySelector('#recipeList').innerHTML += '<div class="recipe" onClick ="window.open('+"'"+this.videoUrl+"')"+'"/><h1 class="menu">'+this.title+'</h1></div>';
+        document.querySelector('#recipeList').innerHTML += '<div class="recipe" onClick="window.location='+"'"+this.videoUrl+"'"+'"/><h1 class="menu">'+this.title+'</h1></div>';
     }
     Addexample() {
         document.querySelector('.exampleImage').innerHTML +='<a href='+'https://youtu.be/'+this.videoId+'>'+'<img src='+this.thumbsnail+'></a>';
@@ -50,7 +50,7 @@ const youtubeRecipe = new YoutubeRecipe()
 async function readContents() {
     const responseData = await youtubeRecipe.getInfo();
     responseData.map((item) => {
-        const videoUrl = location.href.replace("index.html", '')+"recipePage.html?videoId=" + item.snippet.resourceId.videoId;
+        const videoUrl = location.href.replace("index.html", 'recipePage.html?videoId='+item.snippet.resourceId.videoId);
         let recipe = new RecipeList(videoUrl, item.snippet.title, item.snippet.resourceId.videoId, item.snippet.thumbnails.high.url)
         recipe.Addexample();
         recipe.AddRecipeList();

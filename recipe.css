@@ -168,6 +168,7 @@ main{
     text-decoration: none;
     cursor:pointer;
     margin-right: 10px;
+    outline: none;
 }
 .icon {
     width: 80%;

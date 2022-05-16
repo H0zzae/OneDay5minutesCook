@@ -50,7 +50,7 @@ const youtubeRecipe = new YoutubeRecipe()
 async function readContents() {
     const responseData = await youtubeRecipe.getInfo();
     responseData.map((item) => {
-        const videoUrl = "https://h0zzae.github.io/OneDay5minutesCook/recipePage.html?videoId=" + item.snippet.resourceId.videoId;
+        const videoUrl = location.href.replace("index.html", '')+"/recipePage.html?videoId=" + item.snippet.resourceId.videoId;
         let recipe = new RecipeList(videoUrl, item.snippet.title, item.snippet.resourceId.videoId, item.snippet.thumbnails.high.url)
         recipe.Addexample();
         recipe.AddRecipeList();

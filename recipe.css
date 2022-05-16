@@ -247,6 +247,16 @@ footer span {
         float: left;
         margin: -60px 0 0 130px;
     }
+    .likePage {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #fff;
+        cursor: pointer;
+        border: 1px solid #B6B9BF;
+        border-radius: 5px;
+        padding: 10px;
+    }
     main {
         margin: 10px 20px 20px 20px;
         padding-top: 30px;

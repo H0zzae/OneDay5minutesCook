@@ -56,6 +56,16 @@ header .SmallText {
 #haoriFace {
     display: none;
 }
+.likePage {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #B6B9BF;
+    border-radius: 5px;
+    padding: 10px;
+}
 main {
     margin-top: 72px;
     display: flex;

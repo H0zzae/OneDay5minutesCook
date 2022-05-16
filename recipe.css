@@ -88,6 +88,7 @@ header .SmallText {
     border: 1px solid #B6B9BF;
     border-radius: 5px;
     padding: 10px;
+    text-decoration: none;
 }
 main{
     margin: 40px 15%;

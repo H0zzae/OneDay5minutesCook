@@ -50,7 +50,7 @@ function loadMore(){ //레시피 더보기 클릭시 실행되는 함수
 async function readContents() { //레시피 더보기 클릭시, youtuberecipe에 getInfo를 통해 바뀐 maxResult값만큼 정보를 더 불러옴
     const responseData = await youtubeRecipe.getInfo();
     responseData.map((item) => {
-        const videoUrl = 'https://h0zzae.github.io/OneDay5minutesCook/recipePage.html?videoId='+item.snippet.resourceId.videoId;
+        const videoUrl = './recipePage.html?videoId='+item.snippet.resourceId.videoId;
         let recipe = new RecipeList(videoUrl, item.snippet.title, item.snippet.resourceId.videoId, item.snippet.thumbnails.high.url)
         recipe.Addexample();
         recipe.AddRecipeList();

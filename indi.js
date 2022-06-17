@@ -8,6 +8,7 @@ window.onload = async function (){ //페이지 첫 로드시 실행
     responseData = await (await fetch(fetchurl)).json();
     recipeInfo = new recipeDetail(responseData.items[0], videoId); //RecipeDetail 객체 생성
     recipeInfo.fillHTML(); //가지고 온 값 html에 출력
+    recipeInfo.checkSaved();
 }
 class recipeDetail{ //recipe 정보를 담을 class
     constructor(responseData, videoId) {
@@ -60,4 +61,15 @@ class recipeDetail{ //recipe 정보를 담을 class
             sessionStorage.setItem("like", session);
         }
     }
+    checkSaved() {
+        const saved = JSON.parse(sessionStorage.getItem("like")); //현재 session에 저장되어있는 레시피 불러옴
+        console.log(saved, this.videoId,saved.includes(this.videoId))
+        if (saved.includes(this.videoId)){
+            document.querySelector('#Heart').style.transition = 'background 1s';
+            document.querySelector('#Heart').style.background = 'url("./Img/clickedHeart.svg") no-repeat';
+            document.querySelector('#Heart').style.backgroundSize = 'contain';
+            document.querySelector('#Heart').style.outline = 'none';
+        }
+    }
+
 }
